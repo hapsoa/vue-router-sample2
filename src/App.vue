@@ -1,35 +1,37 @@
 <template lang="pug">
-  <div id="app">
-    <!--<img src="./assets/logo.png">-->
+  #app
     //.icon-font.icon-font-baseline-autorenew-24px
-    <router-view/>
-  </div>
+    router-view
+
 </template>
 
 <script>
 import Vue from 'vue';
 import Button from './components/button-simple';
+
 import { store } from './vuex/store';
 
 Vue.component(Button.name, Button);
 
+
 export default {
   name: 'App',
   store,
-  methods: {}
+  methods: {},
+  mounted() {
+    Vue.prototype.$loadingProgress = this.$refs.loadingProgress;
+  }
 };
 </script>
 
-<style>
-@import "./icon-font-dest/iconfont.css";
+<style lang="sass">
+@import "./icon-font-dest/iconfont.css"
 
+*
+  box-sizing: border-box
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+body
+  margin: 0
+  padding: 0
+
 </style>

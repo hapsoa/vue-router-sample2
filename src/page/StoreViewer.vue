@@ -1,13 +1,11 @@
 <template lang="pug">
   .hello
-    h1 HELLO
+    h1 Store Viewer
     h3 {{$store.getters.name}}
     h3 {{$store.getters.age}}
     hr
-    button(@click="increaseAge") increaseAge
-    button(@click="decreaseAge") decreaseAge
     hr
-    router-link(to="/store") GO TO STORE
+    router-link(to="/") GO TO HELLO
 </template>
 
 <script>
@@ -36,14 +34,6 @@ export default {
     }
   },
   methods: {
-    increaseAge() {
-      this.$store.commit('changeAge',
-        this.$store.getters.age + 1);
-    },
-    decreaseAge() {
-      this.$store.commit('changeAge',
-        this.$store.getters.age - 1);
-    },
     increment() {
       this.$store.commit('increment', { inc: 1 });
     },
@@ -59,21 +49,21 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
+  h1, h2 {
+    font-weight: normal;
+  }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
 
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
 
-a {
-  color: #42b983;
-}
+  a {
+    color: #42b983;
+  }
 </style>

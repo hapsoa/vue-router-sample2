@@ -4,6 +4,7 @@ import Hello from '../page/Hello';
 import User from '../page/User';
 import Card from '../page/Card';
 import test from '../page/test/test';
+import StoreViewer from '../page/StoreViewer';
 
 Vue.use(Router);
 
@@ -14,6 +15,11 @@ export default new Router({
       path: '/',
       name: 'Hello',
       component: Hello
+    },
+    {
+      path: '/store',
+      name: StoreViewer.name,
+      component: StoreViewer
     },
     {
       path: '/user',
